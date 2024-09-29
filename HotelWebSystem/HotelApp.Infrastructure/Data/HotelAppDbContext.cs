@@ -17,11 +17,13 @@ namespace HotelApp.Infrastructure.Data
         public DbSet<Guest> Guests { get; set; }
         public DbSet<Facility> Facilities { get; set; }
         public DbSet<FacilityReservation> FacilitiesReservations { get; set; }
-        public DbSet<Review> Reviews { get; set; }  
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<ReservationParticipant> ReservationsParticipants { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new FacilityReservationConfiguration());
+            builder.ApplyConfiguration(new ReservationParticipantConfiguration());
 
             base.OnModelCreating(builder);
         }

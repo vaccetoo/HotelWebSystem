@@ -26,6 +26,10 @@ namespace HotelApp.Infrastructure.Data.Models
         [ForeignKey(nameof(UserId))]
         public ApplicationUser User { get; set; } = null!;
 
-        public IEnumerable<FacilityReservation> FacilitiesReservation { get; set; } = new List<FacilityReservation>();
+        public IEnumerable<ReservationParticipant> ReservationParticipants { get; set; } 
+            = new List<ReservationParticipant>();
+
+        public IEnumerable<FacilityReservation> FacilitiesReservation { get; set; } 
+            = new List<FacilityReservation>();
     }
 }
