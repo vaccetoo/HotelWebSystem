@@ -1,4 +1,5 @@
-﻿using HotelApp.Infrastructure.Data.Models;
+﻿using HotelApp.Infrastructure.Data.Configuration;
+using HotelApp.Infrastructure.Data.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,10 +14,15 @@ namespace HotelApp.Infrastructure.Data
 
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
-        public DbSet<Guest> Guests { get; set; }  
-        
+        public DbSet<Guest> Guests { get; set; }
+        public DbSet<Facility> Facilities { get; set; }
+        public DbSet<FacilityReservation> FacilitiesReservations { get; set; }
+        public DbSet<Review> Reviews { get; set; }  
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.ApplyConfiguration(new FacilityReservationConfiguration());
+
             base.OnModelCreating(builder);
         }
     }

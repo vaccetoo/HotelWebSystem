@@ -25,5 +25,7 @@ namespace HotelApp.Infrastructure.Data.Models
         [Required]
         [ForeignKey(nameof(GuestId))]
         public Guest Guest { get; set; } = null!;
+
+        public IEnumerable<FacilityReservation> FacilitiesReservations { get; set; } = new List<FacilityReservation>();
     }
 }

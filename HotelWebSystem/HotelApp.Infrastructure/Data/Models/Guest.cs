@@ -24,6 +24,7 @@ namespace HotelApp.Infrastructure.Data.Models
         [RegularExpression(EmailPattern)]
         public string Email { get; set; } = null!;
 
-        public IEnumerable<Reservation> Reservations { get; set; } = new List<Reservation>();   
+        public IEnumerable<Reservation> Reservations { get; set; } = new List<Reservation>();
+        public IEnumerable<Review> Reviews { get; set; } = new List<Review>();
     }
 }

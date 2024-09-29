@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using static HotelApp.Common.Constants.ValidationConstants;
 
 namespace HotelApp.Infrastructure.Data.Models
@@ -17,6 +18,7 @@ namespace HotelApp.Infrastructure.Data.Models
 
         [Required]
         [Range(typeof(decimal), nameof(RoomMinPrice), nameof(RoomMaxPrice))]
+        [Precision(DecimalPrecision, DecimalScale)]
         public decimal PricePerNight { get; set; }
 
         [Required]
