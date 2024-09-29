@@ -21,11 +21,11 @@ namespace HotelApp.Infrastructure.Data.Models
         public DateTime EndDate { get; set; }
 
         [Required]
-        public int GuestId { get; set; }
+        public string UserId { get; set; } = null!;
         [Required]
-        [ForeignKey(nameof(GuestId))]
-        public Guest Guest { get; set; } = null!;
+        [ForeignKey(nameof(UserId))]
+        public ApplicationUser User { get; set; } = null!;
 
-        public IEnumerable<FacilityReservation> FacilitiesReservations { get; set; } = new List<FacilityReservation>();
+        public IEnumerable<FacilityReservation> FacilitiesReservation { get; set; } = new List<FacilityReservation>();
     }
 }

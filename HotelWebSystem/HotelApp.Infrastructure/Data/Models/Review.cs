@@ -14,7 +14,7 @@ namespace HotelApp.Infrastructure.Data.Models
         public string UserId { get; set; } = null!;
         [Required]
         [ForeignKey(nameof(UserId))]
-        public IdentityUser User { get; set; } = null!;
+        public ApplicationUser User { get; set; } = null!;
 
         [Required]
         [Range(ReviewMinRaiting, ReviewMaxRaiting)]

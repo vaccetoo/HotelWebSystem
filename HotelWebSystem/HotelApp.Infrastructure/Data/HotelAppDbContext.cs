@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HotelApp.Infrastructure.Data
 {
-    public class HotelAppDbContext : IdentityDbContext
+    public class HotelAppDbContext : IdentityDbContext<ApplicationUser>
     {
         public HotelAppDbContext(DbContextOptions<HotelAppDbContext> options)
             : base(options)

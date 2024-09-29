@@ -28,6 +28,6 @@ namespace HotelApp.Infrastructure.Data.Models
         [Required]
         public DateTime CloseAt { get; set; }
 
-        public IEnumerable<FacilityReservation> FacilitiesReservations { get; set; } = new List<FacilityReservation>();
+        public IEnumerable<FacilityReservation> FacilityReservations { get; set; } = new List<FacilityReservation>();
     }
 }
