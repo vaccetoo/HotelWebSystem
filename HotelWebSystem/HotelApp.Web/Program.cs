@@ -2,25 +2,16 @@ using HotelApp.Infrastructure.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using HotelApp.Common.Options;
+using HotelApp.Web.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add application services 
-builder.Services.Configure<HotelInfoOptions>(builder.Configuration.GetSection("HotelInfo"));
+builder.Services.AddApplicationDbContext(builder.Configuration);
+builder.Services.AddApplicationIdentity(builder.Configuration);
 
-// Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-builder.Services.AddDbContext<HotelAppDbContext>(options =>
-    options.UseSqlServer(connectionString));
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-
-// TODO: Add password constraints ...
-builder.Services.AddDefaultIdentity<IdentityUser>(options =>
-{
-    options.SignIn.RequireConfirmedAccount = false;
-})
-    .AddEntityFrameworkStores<HotelAppDbContext>();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddApplicationServices(builder.Configuration);
 
 var app = builder.Build();
 
