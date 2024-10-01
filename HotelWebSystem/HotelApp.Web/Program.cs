@@ -1,8 +1,3 @@
-using HotelApp.Infrastructure.Data;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using HotelApp.Common.Options;
-using HotelApp.Web.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,4 +34,4 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
 
-app.Run();
+await app.RunAsync();

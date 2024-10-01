@@ -3,7 +3,7 @@ using HotelApp.Infrastructure.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace HotelApp.Web.Extensions
+namespace Microsoft.Extensions.DependencyInjection
 {
     public static class ServiceCollectionExtension
     {
@@ -16,13 +16,15 @@ namespace HotelApp.Web.Extensions
 
         public static IServiceCollection AddApplicationDbContext(this IServiceCollection services, IConfiguration configuration)
         {
-            var connectionString = configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            var connectionString = configuration.GetConnectionString("DefaultConnection") ??
+                throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
             services.AddDbContext<HotelAppDbContext>(options =>
             {
                 options.UseSqlServer(connectionString);
-            })
-              .AddDatabaseDeveloperPageExceptionFilter();
+            });
+
+            services.AddDatabaseDeveloperPageExceptionFilter();
 
             return services;
         }
@@ -33,7 +35,7 @@ namespace HotelApp.Web.Extensions
             {
                 options.SignIn.RequireConfirmedAccount = false;
             })
-              .AddEntityFrameworkStores<HotelAppDbContext>();
+            .AddEntityFrameworkStores<HotelAppDbContext>();
 
             return services;
         }
