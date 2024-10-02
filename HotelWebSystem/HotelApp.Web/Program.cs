@@ -1,12 +1,16 @@
 
+using HotelApp.Common.Options;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddApplicationDbContext(builder.Configuration);
 builder.Services.AddApplicationIdentity(builder.Configuration);
+builder.Services.AddApplicationServices();
+
+builder.Services.Configure<HotelInfoOptions>(builder.Configuration.GetSection("HotelInfo"));
 
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddApplicationServices(builder.Configuration);
 
 var app = builder.Build();
 

@@ -7,10 +7,8 @@ namespace Microsoft.Extensions.DependencyInjection
 {
     public static class ServiceCollectionExtension
     {
-        public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
-            services.Configure<HotelInfoOptions>(configuration.GetSection("HotelInfo"));
-
             return services;
         }
 
