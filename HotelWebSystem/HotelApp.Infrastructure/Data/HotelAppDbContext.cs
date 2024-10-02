@@ -1,4 +1,4 @@
-﻿using HotelApp.Infrastructure.Data.Configuration;
+﻿using HotelApp.Infrastructure.Data.Extensions;
 using HotelApp.Infrastructure.Data.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -22,8 +22,7 @@ namespace HotelApp.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.ApplyConfiguration(new FacilityReservationConfiguration());
-            builder.ApplyConfiguration(new ReservationParticipantConfiguration());
+            builder.ApplyConfigurations();
 
             base.OnModelCreating(builder);
         }

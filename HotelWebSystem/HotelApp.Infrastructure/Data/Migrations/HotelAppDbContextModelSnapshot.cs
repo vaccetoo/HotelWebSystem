@@ -115,7 +115,7 @@ namespace HotelApp.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Facilities");
+                    b.ToTable("Facilities", (string)null);
                 });
 
             modelBuilder.Entity("HotelApp.Infrastructure.Data.Models.FacilityReservation", b =>
@@ -130,7 +130,7 @@ namespace HotelApp.Infrastructure.Data.Migrations
 
                     b.HasIndex("ReservationId");
 
-                    b.ToTable("FacilitiesReservations");
+                    b.ToTable("FacilitiesReservations", (string)null);
                 });
 
             modelBuilder.Entity("HotelApp.Infrastructure.Data.Models.Guest", b =>
@@ -161,7 +161,7 @@ namespace HotelApp.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Guests");
+                    b.ToTable("Guests", (string)null);
                 });
 
             modelBuilder.Entity("HotelApp.Infrastructure.Data.Models.Reservation", b =>
@@ -191,7 +191,7 @@ namespace HotelApp.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reservations");
+                    b.ToTable("Reservations", (string)null);
                 });
 
             modelBuilder.Entity("HotelApp.Infrastructure.Data.Models.ReservationParticipant", b =>
@@ -206,7 +206,7 @@ namespace HotelApp.Infrastructure.Data.Migrations
 
                     b.HasIndex("GuestId");
 
-                    b.ToTable("ReservationsParticipants");
+                    b.ToTable("ReservationsParticipants", (string)null);
                 });
 
             modelBuilder.Entity("HotelApp.Infrastructure.Data.Models.Review", b =>
@@ -236,7 +236,7 @@ namespace HotelApp.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reviews");
+                    b.ToTable("Reviews", (string)null);
                 });
 
             modelBuilder.Entity("HotelApp.Infrastructure.Data.Models.Room", b =>
@@ -262,7 +262,7 @@ namespace HotelApp.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Rooms");
+                    b.ToTable("Rooms", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
