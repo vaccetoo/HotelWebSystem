@@ -9,5 +9,8 @@ namespace HotelApp.Infrastructure.Data.Models
 {
     public class ApplicationUser : IdentityUser
     {
+        IEnumerable<Reservation> Reservations = new List<Reservation>();
+
+        IEnumerable<Review> Reviews = new List<Review>();
     }
 }
