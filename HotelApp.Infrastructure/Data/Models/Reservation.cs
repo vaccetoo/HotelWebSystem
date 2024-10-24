@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using static HotelApp.Common.Constants.ValidationConstants;
 
 namespace HotelApp.Infrastructure.Data.Models
 {
@@ -12,6 +13,7 @@ namespace HotelApp.Infrastructure.Data.Models
         public int Id { get; set; }
 
         [Required]
+        [Precision(RequiredPrecision, RequiredScale)]
         [Comment("Shows the total price after any additional facilities, if there is any")]
         public decimal TotalPrice { get; set; }
 
