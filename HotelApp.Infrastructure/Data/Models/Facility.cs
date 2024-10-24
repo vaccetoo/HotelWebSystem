@@ -15,7 +15,7 @@ namespace HotelApp.Infrastructure.Data.Models
         public string Description { get; set; } = string.Empty;
 
         [Required]
-        public decimal PricePerDay { get; set; }
+        public decimal Price { get; set; }
 
         [Required]
         public DateTime OpenAt { get; set; }
