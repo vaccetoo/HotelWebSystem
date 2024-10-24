@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using static HotelApp.Common.Constants.ValidationConstants;
 
 namespace HotelApp.Infrastructure.Data.Models
 {
@@ -9,6 +10,7 @@ namespace HotelApp.Infrastructure.Data.Models
         public int Id { get; set; }
 
         [Required]
+        [MaxLength(ReviewCommentMaxLength)]
         public string Comment { get; set; } = string.Empty;
 
         [Required]
