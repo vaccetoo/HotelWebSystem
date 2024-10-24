@@ -1,5 +1,7 @@
 ﻿using HotelApp.Common.Enums;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using static HotelApp.Common.Constants.ValidationConstants;
 
 namespace HotelApp.Infrastructure.Data.Models
 {
@@ -12,9 +14,11 @@ namespace HotelApp.Infrastructure.Data.Models
         public FacilityType FacilityType { get; set; }
 
         [Required]
+        [MaxLength(FacilityDescriptionMaxLength)]
         public string Description { get; set; } = string.Empty;
 
         [Required]
+        [Precision(RequiredPrecision, RequiredScale)]
         public decimal Price { get; set; }
 
         [Required]
