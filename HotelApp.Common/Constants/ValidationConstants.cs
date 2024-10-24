@@ -14,6 +14,10 @@
         public const int RequiredPrecision = 18;
         public const int RequiredScale = 2;
 
+        // Facility validation constants
+        public const int FacilityDescriptionMinLength = 5;
+        public const int FacilityDescriptionMaxLength = 520;
+
         public const string PhoneNumberPattern = @"^\+[\d]{8,15}$";
         public const string EmailAddressPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
     }
